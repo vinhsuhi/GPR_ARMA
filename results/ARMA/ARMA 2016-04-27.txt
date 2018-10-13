@@ -1,0 +1,2 @@
+method,Date,realPrice,lastPrice,predictPrice,correct
+ARMA,2016-04-27,593.96,598.48,598.5528253232775,0
