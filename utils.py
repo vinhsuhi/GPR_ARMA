@@ -64,7 +64,7 @@ class Log:
         if not os.path.exists(out_path):
             os.makedirs(out_path)
         columns = ["method", "Date", "realPrice", "lastPrice", "predictPrice", "correct"]
-        outFile =  out_path + sep + method + sep + "%s %s.txt"%(method, date)
+        outFile =  out_path + "/" + "%s %s.txt"%(method, date)
         open(outFile, "w").write("%s\n"%(",".join(columns)))
         open(outFile, "a").write("%s,%s,%s,%s,%s,%s"\
             %(method, date, realPrice, lastPrice, predictPrice, correct))
