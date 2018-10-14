@@ -72,14 +72,14 @@ python main.py \
 #########################################
 STARTDATE='2015-02-02'
 MODEL='GPR-ARMA'
-MODE='statistic'
+MODE='train'
 
 python main.py \
 --input_path data/vn_index.txt \
 --output_path results \
 --start_date ${STARTDATE} \
 --model ${MODEL} \
---num_dates 377 \
---num_tests 81 \
+--num_dates 60 \
+--num_tests 2 \
 --mode ${MODE} \
 --model ${MODEL}

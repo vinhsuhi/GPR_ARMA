@@ -67,14 +67,14 @@ class InputModule:
             data_to_return = pd.Series.diff(data_to_return)
         return data_to_return[1:]
 
-    def get_return_value_from_diff(predict_value, diff_data_list):
+    def get_return_value_from_diff(sefl, predict_value, diff_data_list):
         value = predict_value
         for i in range(len(diff_data_list) - 1):
             value += diff_data_list[i][0] + diff_data_list[i+1].sum()
         return value
 
 
-    def makeInputSequence(len):
+    def makeInputSequence(self, len):
         return np.array(list(range(1, len + 1)))
 
 

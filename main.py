@@ -23,13 +23,12 @@ def arma_block(data, diff_data_list, iARMA, Input):
     while True:
         try:
             result = iARMA.arma_prediction(np.array([diff_data[i] for i in range(len(diff_data))]))
-            print(result)
         except:
             diff_data = Input.get_diff_data(diff_data)
             diff_data_list.append(diff_data)
             continue
         break
-    return_data = Input.get_predict_price_from_diff(result, diff_data_list)
+    return_data = Input.get_return_value_from_diff(result, diff_data_list)
     return return_data
 
 
@@ -37,15 +36,13 @@ def gpr_block(data, diff_data_list, iGPR, Input):
     diff_data = data
     while True:
         try:
-            print(diff_data[0])
             result = iGPR.gpr_prediction(np.array([diff_data[i] for i in range(len(diff_data))]))
-            print(result)
         except:
             diff_data = Input.get_diff_data(diff_data)
             diff_data_list.append(diff_data)
             continue
         break
-    return_data = Input.get_predict_price_from_diff(result, diff_data_list)
+    return_data = Input.get_return_value_from_diff(result, diff_data_list)
     return return_data
 
 
@@ -68,7 +65,6 @@ def gpr_arma(Input, iARMA, iGPR, output_path):
     for date in predict_dates:
         data, real_price, last_price = Input.get_input(pivot_date=date)
         trend, seasonal, residual = Input.get_components(data)
-
         print("Start predict trend using GPR for date: ", date)
         diff_trend_list = [trend]
         predicted_trend = gpr_block(trend, diff_trend_list, iGPR, Input)
