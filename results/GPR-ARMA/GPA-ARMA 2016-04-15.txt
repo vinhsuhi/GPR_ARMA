@@ -1,2 +1,0 @@
-method,Date,realPrice,lastPrice,predictPrice,correct
-GPA-ARMA-ADD,2016-04-15,579.86,579.49,580.034542080905,1

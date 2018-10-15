@@ -1,0 +1,2 @@
+method,Date,realPrice,lastPrice,predictPrice,correct
+GPR-ARMA,2016-07-04,647.96,640.3,635.3227515253318,0

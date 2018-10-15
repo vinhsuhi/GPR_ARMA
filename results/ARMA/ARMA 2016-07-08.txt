@@ -1,2 +1,2 @@
 method,Date,realPrice,lastPrice,predictPrice,correct
-ARMA,2016-07-08,658.68,661.12,661.1171454021065,1
+ARMA,2016-07-08,658.68,661.12,661.1171703227964,1

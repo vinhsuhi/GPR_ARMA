@@ -1,2 +1,2 @@
 method,Date,realPrice,lastPrice,predictPrice,correct
-GPR,2016-04-27,593.96,598.48,597.7608790146128,1
+GPR,2016-04-27,593.96,598.48,597.7608794654494,1

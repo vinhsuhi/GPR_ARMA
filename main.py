@@ -1,4 +1,6 @@
 import argparse
+import matplotlib
+matplotlib.use('Agg')
 import traceback
 from algorithms import AutoRegressiveMovingAverage, GaussianProcess
 from utils import Visualizer, Log
@@ -119,7 +121,7 @@ def gpr(Input, iGPR, output_path):
     for date in predict_dates:
         data, real_price, last_price = Input.get_input(pivot_date=date)
         diff_data_list = [data]
-        print("Start predict using ARMA for date: ", date)
+        print("Start predict using GPR for date: ", date)
 
         predict_price = gpr_block(data, diff_data_list, iGPR, Input)
 
@@ -201,7 +203,7 @@ if __name__ == '__main__':
             trend, seasonal, residual = Input.get_components(data)
             real_price_list = np.array([data[i] for i in range(len(data))])
             vizualizer = Visualizer()
-            vizualizer.drawComponents(real_price_list)
+            #vizualizer.drawComponents(real_price_list)
             vizualizer.drawHistoryPrice(real_price_list)
             vizualizer.drawACFofResidual(residual)
 

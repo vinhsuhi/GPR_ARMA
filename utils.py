@@ -4,6 +4,8 @@ import glob
 import numpy as np
 import os
 from statsmodels import api as sm
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import scipy.stats as stats
 

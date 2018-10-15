@@ -1,4 +1,6 @@
 import pyGPs
+import matplotlib
+matplotlib.use('Agg')
 from statsmodels.tsa.stattools import arma_order_select_ic
 from statsmodels.tsa.arima_model import ARMA
 import numpy as np
